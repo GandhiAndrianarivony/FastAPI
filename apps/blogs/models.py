@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Boolean
-from .db_connection import Base
+from api.db_connection import Base
 
 
 class Blog(Base):
