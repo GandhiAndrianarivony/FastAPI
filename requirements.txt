@@ -1,11 +1,13 @@
 annotated-types==0.6.0
 anyio==4.2.0
+bcrypt==4.1.2
 click==8.1.7
 fastapi==0.109.2
 greenlet==3.0.3
 h11==0.14.0
 httptools==0.6.1
 idna==3.6
+passlib==1.7.4
 pydantic==2.6.0
 pydantic_core==2.16.1
 python-dotenv==1.0.1
