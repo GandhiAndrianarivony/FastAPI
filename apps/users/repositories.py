@@ -1,7 +1,7 @@
-from passlib.context import CryptContext
+from fastapi import HTTPException, status
 
 from apps.users.models import User
-from .helpers import hash_password
+from api.helpers import hash_password
 
 
 def create_user(request, db):
@@ -14,5 +14,12 @@ def create_user(request, db):
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
-    
+
     return new_user
+
+
+def get_user(id, db):
+    user = db.query(User).filter(User.id == id)
+    if not user.first():
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+    return user.first()
